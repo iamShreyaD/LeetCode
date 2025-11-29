@@ -1,3 +1,5 @@
+
+
 Table: Employees
 
 +---------------+---------+
@@ -26,11 +28,7 @@ Write a solution to show the unique ID of each user, If a user does not have a u
 
 Return the result table in any order.
 
-SELECT EmployeeUNI.unique_id, Employees.name
-FROM EmployeeUNI
-LEFT JOIN Employees ON EmployeeUNI.id = Employees.id
-UNION
-SELECT EmployeeUNI.unique_id, Employees.name
+SELECT unique_id, name
 FROM Employees
 LEFT JOIN EmployeeUNI ON Employees.id = EmployeeUNI.id
 ;
