@@ -12,7 +12,7 @@ There are no different rows with the same recordDate.
 This table contains information about the temperature on a certain day.
  
 
-Write a solution to find all dates' id with higher temperatures compared to its previous dates (yesterday).
+Write a solution to find all dates id with higher temperatures compared to its previous dates (yesterday).
 
 Return the result table in any order.
 
@@ -44,3 +44,8 @@ In 2015-01-02, the temperature was higher than the previous day (10 -> 25).
 In 2015-01-04, the temperature was higher than the previous day (20 -> 30).
 
 
+SELECT w.id
+FROM Weather w
+INNER JOIN Weather t ON w.recordDate = t.recordDate + INTERVAL 1 DAY
+WHERE w.temperature > t.temperature
+;
